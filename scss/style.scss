@@ -837,6 +837,11 @@ header.main-header {
                         fill: rgb(78, 78, 78) !important;
                     }
                 }
+                .mobile-menu-btn{
+                        span {
+                                background-color: #000 ;
+                        }
+                }
 
 
 
@@ -963,6 +968,9 @@ header.main-header {
                 }
             }
         }
+        .mobile-menu-btn span{
+                background-color: #fff;
+        }
     }
     // after scroll menu END
 }
@@ -1088,6 +1096,10 @@ header.main-header {
             min-width: 150px;
             padding: 0px 15px;
             margin: 20px 0;
+            @include r(320px){
+                width: 49%;
+                min-width: 0px;
+            }
             svg,
             img {
                 max-width:80px;
@@ -1144,6 +1156,11 @@ header.main-header {
                    width:33.33333%;
                 }
             }
+            @include r(320px){
+                &{
+                   width:50%;
+                }
+            }
         }
     }
 }
@@ -1180,6 +1197,9 @@ header.main-header {
                 color:#4D4D4D;
                 background-color:$mainColor;
                 border:1px solid $mainColor;
+                 @media only screen and  (min-width: 767px) and (max-width: 1000px) {
+                    height: 77px;
+                }
             }
             &:hover,
             &.active {
@@ -1389,6 +1409,10 @@ header.main-header {
                  @media only screen and (max-width: 767px) {
                     padding: 0;
                     min-width: 80px;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 35px;
+                    right: 15px;
                 }
             }
             .cover_input{
@@ -1456,6 +1480,10 @@ section.partner__more-section{
     z-index:99;
     padding:0;
     list-style: none;
+    @media only screen and  (max-width: 767px) {
+            display:  none;
+    }
+
     li {
         a {
             position:relative;
@@ -1501,20 +1529,40 @@ section.partner__more-section{
     }
 }
 .history-section {
+    @media only screen and (max-width: 768px) {
+        .container{
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
     .history-list {
         margin:70px 0 0 0;
         padding:0;
         list-style: none;
         border-top:1px solid $mainColor;
+        @media only screen and (max-width: 768px) {
+            padding: 20px;
+            list-style: none;
+            background-color: #4D4D4D;
+        }
         li {
             float: left;
             width:14.285%;
             @media only screen and (max-width: 768px) {
-                width:33.333%;
-                margin-bottom: 35px;
+                width:100%;
+                display: block;
+                padding: 12px 10px 7px;
+                font-family: "CynthoPro-ExtraLight", sans-serif;
+                font-size: 1.429em;
+                text-transform: uppercase;
+                color: #4D4D4D;
+                background-color: #FFD658;
+                border: 1px solid #FFD658;
+                @include transition(0s linear);
 
             }
             a {
+
                 position: relative;
 
                 display: inline-block;
@@ -1525,9 +1573,16 @@ section.partner__more-section{
                 text-transform: uppercase;
                 color:#4d4d4d;
                 @include transition(.5s linear);
+                 @media only screen and (max-width: 768px) {
+                   width: 100%;
+                   margin-top: 0px;
+                }
                 span {
                     display: block;
                     line-height: 1.3em;
+                    @media only screen and (max-width: 768px) {
+                        display: inline;
+                    }
                 }
                 &:before {
                     content:'';
@@ -1540,6 +1595,9 @@ section.partner__more-section{
                     border-bottom:20px solid $mainColor;
                     opacity:0;
                     @include transition(.5s linear);
+                    @media only screen and (max-width: 768px) {
+                        display: none;
+                    }
                 }
                 &:after {
                     content:'';
@@ -1554,12 +1612,22 @@ section.partner__more-section{
                     opacity:1;
                     @include transition(.5s linear);
                     @include transform(scale(1));
+                    @media only screen and (max-width: 768px) {
+                        display: none;
+                    }
                 }
             }
             &.active {
+                @media only screen and (max-width: 768px) {
+                    background-color: #4D4D4D;
+                }
                 a {
                     color:#fff;
                     background-color: $mainColor;
+                    @media only screen and (max-width: 768px) {
+                        background-color: #4D4D4D;
+                        color: #FFD658;
+                    }
                     &:before {
                         opacity:1;
                     }
